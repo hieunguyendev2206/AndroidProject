@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <include layout="@layout/custom_toolbar_chi_tiet_san_pham"/>
+
+    <ImageView
+        android:id="@+id/imgCTSP"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/border_filter"
+        app:srcCompat="@drawable/groceries"
+        android:contentDescription="TODO"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvMaCTSP"
+            style="@style/fontHienThi2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mã mặt hàng" />
+
+        <TextView
+            android:id="@+id/tvTenCTSP"
+            style="@style/fontHienThi2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tên mặt hàng" />
+
+        <TextView
+            android:id="@+id/tvSoLuongCTSP"
+            style="@style/fontHienThi2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Số lượng" />
+
+        <TextView
+            android:id="@+id/tvDonViCTSP"
+            style="@style/fontHienThi2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đơn vị tính" />
+
+        <TextView
+            android:id="@+id/tvGiaNhapCTSP"
+            style="@style/fontHienThi2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Giá nhập" />
+
+        <TextView
+            android:id="@+id/tvGiaBanCTSP"
+            style="@style/fontHienThi2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Giá Bán" />
+
+        <TextView
+            android:id="@+id/tvDanhMucCTSP"
+            style="@style/fontHienThi2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Danh mục" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnUpdateCTSP"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/border_button2"
+            android:text="Chỉnh sửa" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="16dp"
+            android:background="@drawable/border_button"
+            android:text="Xóa Sản phẩm"
+            android:id="@+id/btnXoaSanPhamCTSP"/>
+    </LinearLayout>
+</LinearLayout>

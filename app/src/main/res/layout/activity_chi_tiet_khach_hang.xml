@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="vn.poly.quanlybanhang.Activity.ChiTietKhachHangActivity">
+    <ImageView
+        android:id="@+id/imgCTSP"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/border_filter"
+        app:srcCompat="@drawable/profile"
+        android:contentDescription="TODO"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:background="@android:color/white"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTenKH"
+            style="@style/fontHienThi2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tên khách hàng :" />
+
+        <TextView
+            android:id="@+id/tvSDTKH"
+            style="@style/fontHienThi2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Số điện thoại : " />
+
+        <TextView
+            android:id="@+id/tvEmailKH"
+            style="@style/fontHienThi2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email :" />
+
+        <TextView
+            android:id="@+id/tvDiaChiKH"
+            style="@style/fontHienThi2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Địa chỉ" />
+
+        <TextView
+            android:id="@+id/tvTienDaMuaKH"
+            style="@style/fontHienThi2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tiền đã thanh toán : " />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvTienNoKH"
+                style="@style/fontHienThi2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="4"
+                android:text="Tiền nợ : " />
+
+            <Button
+                android:id="@+id/btnSuaNo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/border_button2"
+                android:text=" Sửa nợ" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnUpdateKH"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/border_button2"
+            android:text="Chỉnh sửa"
+            tools:ignore="ButtonStyle" />
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="16dp"
+            android:background="@drawable/border_button"
+            android:text="Xóa Khách Hàng"
+            android:id="@+id/btnXoaKH"
+            tools:ignore="ButtonStyle" />
+    </LinearLayout>
+</LinearLayout>

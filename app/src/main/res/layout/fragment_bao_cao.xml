@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context="vn.poly.quanlybanhang.Fragment.FragmentBaoCao">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayoutBaoCao"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="70dp"
+            android:orientation="vertical">
+
+            <include layout="@layout/custom_toolbar_baocao">
+
+            </include>
+
+            <LinearLayout
+                style="@style/margin8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_filter"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/fontNormal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Loại lọc : "
+                    android:textColor="#FFFFFF" />
+
+                <TextView
+                    android:id="@+id/tvLoaiLocBC"
+                    style="@style/fontNormal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:paddingLeft="18dp"
+                    android:text="Tất cả"
+                    android:textColor="#FF0000"
+                    tools:ignore="RtlSymmetry" />
+
+                <ImageView
+                    android:id="@+id/imgBoLocBaoCao"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:src="@drawable/filter"
+                    android:contentDescription="TODO"
+                    tools:ignore="ContentDescription" />
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="30dp"
+                        android:orientation="horizontal"
+                        android:baselineAligned="false">
+
+                        <LinearLayout
+
+                            style="@style/margin8"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border_filter"
+                            android:orientation="horizontal" >
+                            <TextView
+                                android:id="@+id/btnLoiNhuan"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="0\n \nLợi nhuận"
+                                android:layout_gravity="center"
+                                style="@style/fontHienThi2"
+                                android:textSize="18sp"
+                                android:gravity="center"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            style="@style/margin8"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/border_filter"
+                            android:orientation="horizontal" >
+                            <TextView
+                                android:id="@+id/btnDoanhThu"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="0\nDoanh thu"
+                                android:textSize="18sp"
+                                android:layout_gravity="center"
+                                style="@style/fontHienThi2"
+                                android:gravity="center"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="1dp"
+                        android:text="Hóa đơn "
+                        android:textColor="#FFFFFF"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="@drawable/border_thanh">
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            android:baselineAligned="false">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:id="@+id/tvSoHoaDon"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text=""
+                                    style="@style/fontHienThi2"
+                                     />
+
+                                <ImageView
+                                    android:layout_width="55dp"
+                                    android:layout_height="45dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/invoice"
+                                    android:contentDescription="TODO"
+                                    tools:ignore="ContentDescription" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Số hóa đơn"
+                                    android:textColor="#FFFFFF"
+                                    android:textStyle="italic" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:id="@+id/tvGiaTriHoaDon"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    style="@style/fontHienThi2"
+                                    android:text=""
+                                     />
+
+                                <ImageView
+                                    android:layout_width="55dp"
+                                    android:layout_height="45dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/payment"
+                                    android:contentDescription="TODO"
+                                    tools:ignore="ContentDescription" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Giá trị hóa đơn"
+                                    android:textColor="#FFFFFF"
+                                    android:textStyle="italic" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:text="Tiền Tệ "
+                            android:textColor="#FFFFFF"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"
+                            android:background="@drawable/border_thanh">
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="16dp"
+                            android:baselineAligned="false">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:id="@+id/tvTienVon"
+                                    style="@style/fontHienThi2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="" />
+
+                                <ImageView
+                                    android:layout_width="55dp"
+                                    android:layout_height="45dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/cash"
+                                    android:contentDescription="TODO"
+                                    tools:ignore="ContentDescription" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Tiền vốn"
+                                    android:textColor="#FFFFFF"
+                                    android:textStyle="italic" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:id="@+id/tvTienBan"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    style="@style/fontHienThi2"
+                                    android:text=""
+                                     />
+
+                                <ImageView
+                                    android:layout_width="55dp"
+                                    android:layout_height="45dp"
+                                    android:layout_gravity="center"
+                                    android:src="@drawable/dollar"
+                                    android:contentDescription="TODO"
+                                    tools:ignore="ContentDescription" />
+
+                                <TextView
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Tiền bán"
+                                    android:textColor="#FFFFFF"
+                                    android:textStyle="italic" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <TextView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:text="Biểu đồ thống kê"
+                            android:textColor="#FFFFFF"
+                            android:textSize="15sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"
+                            android:background="@drawable/border_thanh">
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/NavigationViewBaoCao"
+            android:layout_width="300dp"
+            android:background="@android:color/white"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/navheader"
+            app:menu="@menu/drawer_view"
+            android:fitsSystemWindows="false">
+
+
+        </com.google.android.material.navigation.NavigationView>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</LinearLayout>

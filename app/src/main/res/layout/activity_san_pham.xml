@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    tools:context="vn.poly.quanlybanhang.Activity.SanPhamActivity">
+
+    <include layout="@layout/custom_san_pham">
+
+    </include>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/edTimKiemSanPham1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_loupe"
+            android:drawableLeft="@drawable/ic_loupe"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/background_edit_search"
+            android:padding="8dp"
+            android:hint="Tìm kiếm tại đây"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="16dp"
+        android:layout_height="match_parent">
+        <ListView
+            android:id="@+id/lvSanPham_actSP"
+            style="@style/margin8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/tvKhongTimThay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Không tìm thấy mặt hàng nào"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:gravity="center"
+            android:visibility="invisible"
+            style="@style/fontHienThi"/>
+    </FrameLayout>
+
+</LinearLayout>

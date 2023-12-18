@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    >
+
+    <include layout="@layout/custom_toolbar_sua_don_vi_tinh">
+
+    </include>
+
+
+        <LinearLayout
+            android:layout_marginTop="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="75dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edSuaDonViTinh"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/border_edt"
+                    android:hint="Đơn Vị Tính" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+</LinearLayout>

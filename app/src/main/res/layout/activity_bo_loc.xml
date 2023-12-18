@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    >
+
+    <include layout="@layout/custom_toolbar_bo_loc">
+
+    </include>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#818181"
+            android:gravity="start"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/thoi_gian"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:paddingStart="10dp" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radTatCaThoiGian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/tat_ca" />
+
+            <RadioButton
+                android:id="@+id/radHomNay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hôm nay" />
+
+            <RadioButton
+                android:id="@+id/radHomQua"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hôm qua" />
+
+            <RadioButton
+                android:id="@+id/radTuanNay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tuần này" />
+
+            <RadioButton
+                android:id="@+id/radTuanTruoc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tuần trước" />
+
+            <RadioButton
+                android:id="@+id/radThangNay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tháng này" />
+
+            <RadioButton
+                android:id="@+id/radThangTruoc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tháng Trước" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:background="#818181"
+            android:gravity="left"
+            android:paddingLeft="10dp"
+            android:text="Hóa Đơn"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radTatCaHoaDon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Tất cả" />
+
+            <RadioButton
+                android:id="@+id/radChuaThanhToan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chưa Thanh Toán" />
+
+            <RadioButton
+                android:id="@+id/radDaThanhToan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Đã Thanh Toán" />
+
+
+        </RadioGroup>
+    </LinearLayout>
+</LinearLayout>

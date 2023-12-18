@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    tools:context="vn.poly.quanlybanhang.Fragment.FragmentThem">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayoutThem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50dp"
+            android:orientation="vertical"
+            tools:ignore="ExtraText">
+            <!-- TODO: Update blank fragment layout -->
+            <include layout="@layout/custom_toolbar_them">
+
+            </include>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:text="Thiết lập bán hàng"
+                android:textColor="@android:color/holo_red_light"
+                android:textStyle="bold" />
+            android:textColor="#FFFFFF" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@drawable/border_thanh">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:background="@drawable/border_filter"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imgMatHang"
+                        android:layout_width="55dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:contentDescription="TODO"
+                        android:src="@drawable/goods"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/tvMatHang"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="10"
+                        android:text="Mặt hàng"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:background="@drawable/border_filter"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imgPhanLoai"
+                        android:layout_width="55dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:contentDescription="TODO"
+                        android:src="@drawable/groceries"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/tvPhanLoai"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="10"
+                        android:text="Phân loại"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:background="@drawable/border_filter"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imgDonViTinh"
+                        android:layout_width="55dp"
+                        android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:contentDescription="TODO"
+                        android:src="@drawable/justicescale"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/tvDonViTinh"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="10"
+                        android:text="Đơn vị tính"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:background="@drawable/border_filter"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imgNguoiDung"
+                        android:layout_width="55dp"
+                        android:layout_height="45dp"
+                        android:layout_weight="1"
+                        android:contentDescription="TODO"
+                        android:src="@drawable/profile"
+                        tools:ignore="ContentDescription" />
+
+                    <TextView
+                        android:id="@+id/tvNguoiDung"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="10"
+                        android:text="Khách hàng"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/NavigationViewThem"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@android:color/white"
+            android:fitsSystemWindows="false"
+            app:headerLayout="@layout/navheader"
+            app:menu="@menu/drawer_view">
+
+
+        </com.google.android.material.navigation.NavigationView>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</LinearLayout>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android = "http://schemas.android.com/apk/res/android"
+    android:layout_height ="60dp"
+    android:background = "@android:color/holo_blue_bright"
+    android:layout_width="match_parent">
+    <LinearLayout
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="3"
+            android:text="Sửa Khách Hàng"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgLuuKH"
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_diskette"
+            android:contentDescription="TODO"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+
+</androidx.appcompat.widget.Toolbar>

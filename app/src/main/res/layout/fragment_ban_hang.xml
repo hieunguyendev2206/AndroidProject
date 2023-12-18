@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@android:color/white"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayoutBanHang"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="67dp"
+            android:orientation="vertical">
+
+
+            <include layout="@layout/custom_toolbar_ban_hang" />
+
+
+            <LinearLayout
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edTimKiemSanPham"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_loupe"
+                android:drawableLeft="@drawable/ic_loupe"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/background_edit_search"
+                android:padding="8dp"
+                android:hint="Tìm kiếm tại đây"
+                android:inputType="text"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+            <LinearLayout
+
+                style="@style/margin8"
+                android:background="@drawable/border_filter"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <TextView
+android:layout_marginTop="2dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Tất cả mặt hàng :"
+                    android:textColor="#FFFDFD"
+                    android:textSize="18sp" />
+
+                <Spinner
+                    android:id="@+id/spnLocTimKiem"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ListView
+                    android:id="@+id/lvListMatHang"
+                    style="@style/margin8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                <TextView
+                    android:id="@+id/tvNull"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Không tìm thấy mặt hàng nào"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:gravity="center"
+                    android:visibility="invisible"
+                    style="@style/fontHienThi"/>
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/NavigationViewBanHang"
+            android:layout_width="300dp"
+            android:background="@android:color/white"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/navheader"
+            app:menu="@menu/drawer_view"
+            android:fitsSystemWindows="false">
+
+
+        </com.google.android.material.navigation.NavigationView>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</LinearLayout>

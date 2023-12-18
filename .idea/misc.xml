@@ -1,0 +1,81 @@
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/drawable/border_filter.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/drawable/border_img.xml" value="0.26614583333333336" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/drawable/ic_button.xml" value="0.26614583333333336" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/drawable/ic_checked.xml" value="0.26614583333333336" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/font/arbutus.xml" value="0.28020833333333334" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/font/hammersmith_one.xml" value="0.28020833333333334" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/activity_bo_loc.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/activity_chi_tiet_khach_hang.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/activity_chi_tiet_san_pham.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/activity_don_hang.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/activity_don_vi_tinh.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/activity_forgot_pass.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/activity_hoa_don_chi_tiet.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/activity_khach_hang.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/activity_loai_san_pham.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/activity_manhinhchao.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/activity_mat_hang.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/activity_nguoi_dung.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/activity_san_pham.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/activity_sua_don_vi_tinh.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/activity_sua_loai_san_pham.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/activity_sua_san_pham.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/activity_them_don_vi_tinh.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/activity_them_loai_san_pham.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/activity_them_san_pham.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/chiet_khau_dialog.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/chon_so_luong_dialog.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/custom_san_pham.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/custom_sua_nguoi_dung.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/custom_tool_bar_them_san_pham_vao_gio.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/custom_toolbar_ban_hang.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/custom_toolbar_baocao.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/custom_toolbar_bo_loc.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/custom_toolbar_chi_tiet_san_pham.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/custom_toolbar_danh_muc.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/custom_toolbar_don_hang.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/custom_toolbar_don_vi_tinh.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/custom_toolbar_hoadon.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/custom_toolbar_nguoi_dung.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/custom_toolbar_sua_danh_muc.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/custom_toolbar_sua_don_vi_tinh.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/custom_toolbar_sua_san_pham.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/custom_toolbar_them.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/custom_toolbar_them_danh_muc.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/custom_toolbar_them_don_vi_tinh.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/custom_toolbar_them_nguoi_dung.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/custom_toolbar_them_san_pham.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/dialog_khach_hang.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/dialog_sua_khach_hang.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/dialog_sua_no.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/dialog_thanh_toan.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/fragment_ban_hang.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/fragment_bao_cao.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/fragment_hoa_don.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/fragment_them.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/item_don_hang.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/item_hoa_don.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/item_loai_san_pham.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/item_san_pham.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/item_thiet_lap_khach_hang.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/loc_bao_cao_dialog.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/navheader.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/layout/spinner_item.xml" value="0.25" />
+        <entry key="..\:/FPT Polytechnic/Du_An_1/DuAn1Android-master/app/src/main/res/menu/drawer_view.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

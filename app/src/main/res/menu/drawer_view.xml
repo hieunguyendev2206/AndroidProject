@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <item
+            android:icon="@android:drawable/ic_menu_preferences"
+            android:id="@+id/nav_sendEmail"
+            android:title="Phản Hồi Ứng Dụng"
+            tools:ignore="AppCompatResource" />
+        <item
+            android:id="@+id/nav_thoat"
+            android:icon="@android:drawable/ic_delete"
+            android:title="Thoát Ứng Dụng" />
+        <item android:title=""/>
+        <item android:title=""/>
+        <item android:title=""/>
+        <item android:title=""/>
+        <item android:title=""/>
+        <item android:title=""/>
+        <item android:title=""/>
+        <item />
+
+
+</menu>
