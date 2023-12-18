@@ -1,11 +1,9 @@
 package vn.poly.quanlybanhang.Activity;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -23,10 +21,12 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import vn.poly.quanlybanhang.Database.DonViTinhDAO;
-import vn.poly.quanlybanhang.Database.LoaiSanPhamDAO;
-import vn.poly.quanlybanhang.Database.SanPhamDAO;
-import vn.poly.quanlybanhang.Model.SanPham;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.example.duan1android.R;
 import com.google.android.material.snackbar.Snackbar;
@@ -38,7 +38,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import vn.poly.quanlybanhang.Database.DonViTinhDAO;
+import vn.poly.quanlybanhang.Database.LoaiSanPhamDAO;
+import vn.poly.quanlybanhang.Database.SanPhamDAO;
+import vn.poly.quanlybanhang.Model.SanPham;
+
 public class ThemSanPhamActivity extends AppCompatActivity {
+    final int REQUEST_CODE_FOLDER = 0;
     androidx.appcompat.widget.Toolbar toolbar;
     ImageView imgThemAnh, imgThemDonVi, imgThemDanhMuc;
     Spinner spnDonViTinh, spnDanhMuc;
@@ -48,16 +54,16 @@ public class ThemSanPhamActivity extends AppCompatActivity {
     SanPhamDAO sanPhamDAO;
     LinearLayout lnThem;
     byte[] hinhAnh;
-    final int REQUEST_CODE_FOLDER = 456;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_them_san_pham);
+        checkAndRequestStoragePermission();
         anhXaView();
         toolbar = findViewById(R.id.toolbar_them_san_pham);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         sanPhamDAO = new SanPhamDAO(this);
         //Đổ dữu liệu cho spinner:
         listDonVi = new ArrayList<>();
@@ -93,26 +99,53 @@ public class ThemSanPhamActivity extends AppCompatActivity {
         });
         //sự kiện load ảnh
         imgThemAnh.setOnClickListener(view -> ActivityCompat.requestPermissions(ThemSanPhamActivity.this, new String[]{
-                Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_CODE_FOLDER));
+                READ_EXTERNAL_STORAGE}, REQUEST_CODE_FOLDER));
         themDanhMuc_DonVi();
+    }
+
+    private void checkAndRequestStoragePermission() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            // Quyền chưa được cấp, yêu cầu quyền
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                    REQUEST_CODE_FOLDER);
+        } else {
+            // Quyền đã được cấp
+            openImagePicker();
+        }
+    }
+
+    private void openImagePicker() {
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        intent.setType("image/*");
+        startActivityForResult(intent, REQUEST_CODE_FOLDER);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        if (requestCode == REQUEST_CODE_FOLDER && resultCode == RESULT_OK && data != null) {
-            Uri uri = data.getData();
-            InputStream inputStream;
-            try {
-                inputStream = getContentResolver().openInputStream(Objects.requireNonNull(uri));
-                Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
-                imgThemAnh.setImageBitmap(bitmap);
-                //
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
+        if (requestCode == REQUEST_CODE_FOLDER) {
+            if (resultCode == RESULT_OK && data != null) {
+                Uri uri = data.getData();
+                InputStream inputStream;
+                try {
+                    inputStream = getContentResolver().openInputStream(Objects.requireNonNull(uri));
+                    Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                    imgThemAnh.setImageBitmap(bitmap);
+                    // Thực hiện các thao tác khác với ảnh nếu cần
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                // Có thể thêm xử lý nếu người dùng không chọn ảnh
+                Toast.makeText(this, "Không chọn ảnh", Toast.LENGTH_SHORT).show();
             }
+        } else {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
+
+
 
     //sự kiên action bar
     @Override
@@ -146,18 +179,8 @@ public class ThemSanPhamActivity extends AppCompatActivity {
     }
 
     private void themDanhMuc_DonVi() {
-        imgThemDanhMuc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(ThemSanPhamActivity.this, ThemLoaiSanPham.class));
-            }
-        });
-        imgThemDonVi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(ThemSanPhamActivity.this, ThemDonViTinh.class));
-            }
-        });
+        imgThemDanhMuc.setOnClickListener(view -> startActivity(new Intent(ThemSanPhamActivity.this, ThemLoaiSanPham.class)));
+        imgThemDonVi.setOnClickListener(view -> startActivity(new Intent(ThemSanPhamActivity.this, ThemDonViTinh.class)));
     }
 
     public void ThemSanPhamLuu(View view) {
@@ -218,13 +241,38 @@ public class ThemSanPhamActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
         if (requestCode == REQUEST_CODE_FOLDER) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-                intent.setType("image/*");
-                //noinspection deprecation
-                startActivityForResult(intent, REQUEST_CODE_FOLDER);
+                // Quyền đã được cấp, mở trình chọn ảnh
+                openImagePicker();
+            } else {
+                // Người dùng từ chối quyền, hiển thị hộp thoại giải thích
+                showExplanationDialog();
             }
         }
     }
+
+    private void showExplanationDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Cần quyền truy cập lưu trữ")
+                .setMessage("Ứng dụng cần quyền truy cập lưu trữ để chọn hình ảnh.")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Hiển thị hộp thoại giải thích
+                        checkAndRequestStoragePermission();
+                    }
+                })
+                .setNegativeButton("Hủy", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // Người dùng từ chối và không muốn hiển thị hộp thoại nữa
+                        Toast.makeText(ThemSanPhamActivity.this, "Bạn đã từ chối quyền truy cập lưu trữ", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .show();
+    }
+
+
 }

@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sinh Viên Thực Hiện\nNguyễn Đức Hiệu"
+        android:text="@string/author"
         android:textSize="30dp"
         android:textColor="@android:color/holo_blue_light"
         android:textAlignment="center"
