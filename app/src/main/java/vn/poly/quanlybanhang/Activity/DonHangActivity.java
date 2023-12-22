@@ -124,8 +124,8 @@ public class DonHangActivity extends AppCompatActivity {
                         return;
                     } else {
                         chietKhau = Integer.parseInt(edChietKhau.getText().toString());
-                        tvChietKhau.setText("" + edChietKhau.getText().toString() + " VNĐ");
-                        tvTongTien.setText("" + (tongTien - Integer.parseInt(edChietKhau.getText().toString())) + " VNĐ");
+                        tvChietKhau.setText(edChietKhau.getText().toString() + " VNĐ");
+                        tvTongTien.setText((tongTien - Integer.parseInt(edChietKhau.getText().toString())) + " VNĐ");
                         tienFinal = (tongTien - Integer.parseInt(edChietKhau.getText().toString()));
                     }
                 } else {
@@ -134,8 +134,8 @@ public class DonHangActivity extends AppCompatActivity {
                         edChietKhau.setText("");
                         return;
                     } else {
-                        tvChietKhau.setText("" + edChietKhau.getText().toString() + " %");
-                        tvTongTien.setText("" + (tongTien - (tongTien * (Double.parseDouble(edChietKhau.getText().toString()) / 100))) + " VNĐ");
+                        tvChietKhau.setText(edChietKhau.getText().toString() + " %");
+                        tvTongTien.setText((tongTien - (tongTien * (Double.parseDouble(edChietKhau.getText().toString()) / 100))) + " VNĐ");
                         tienFinal = (int) (tongTien - (tongTien * (Double.parseDouble(edChietKhau.getText().toString()) / 100)));
                         chietKhau = (int) (tongTien * (Double.parseDouble(edChietKhau.getText().toString()) / 100));
                     }
@@ -152,7 +152,7 @@ public class DonHangActivity extends AppCompatActivity {
         for (int i = 0; i < MatHangActivity.gioHangList.size(); i++) {
             tongTien += (MatHangActivity.gioHangList.get(i).getGia() * MatHangActivity.gioHangList.get(i).getSoLuong());
         }
-        tvTongTien.setText("" + tongTien + " VNĐ");
+        tvTongTien.setText(tongTien + " VNĐ");
         tienFinal = tongTien;
     }
 
@@ -271,7 +271,7 @@ public class DonHangActivity extends AppCompatActivity {
 
 
         });
-        tvTongTien.setText("" + tienFinal);
+        tvTongTien.setText(String.valueOf(tienFinal));
         edTienTra.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -282,7 +282,7 @@ public class DonHangActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 try {
                     int tientra = Integer.parseInt(edTienTra.getText().toString()) - tienFinal;
-                    tvTienTra.setText("" + tientra);
+                    tvTienTra.setText(String.valueOf(tientra));
                 } catch (Exception ignored) {
 
                 }
@@ -311,7 +311,7 @@ public class DonHangActivity extends AppCompatActivity {
         listView.setOnItemClickListener((adapterView, view1, i, l) -> {
             KH = listKH.get(i);
             khachHang = KH.getTen();
-            tvKhachHang.setText("" + khachHang);
+            tvKhachHang.setText(khachHang);
             dialog.dismiss();
         });
 

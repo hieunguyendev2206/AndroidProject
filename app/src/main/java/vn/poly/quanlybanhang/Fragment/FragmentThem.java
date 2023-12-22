@@ -1,30 +1,31 @@
 package vn.poly.quanlybanhang.Fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+
+import com.example.duan1android.R;
+import com.google.android.material.navigation.NavigationView;
+
+import java.util.Objects;
+
 import vn.poly.quanlybanhang.Activity.DonViTinhActivity;
 import vn.poly.quanlybanhang.Activity.KhachHangActivity;
 import vn.poly.quanlybanhang.Activity.LoaiSanPhamActivity;
 import vn.poly.quanlybanhang.Activity.SanPhamActivity;
-import com.example.duan1android.R;
-import com.google.android.material.navigation.NavigationView;
 
 
 public class FragmentThem extends Fragment {
@@ -33,101 +34,55 @@ public class FragmentThem extends Fragment {
     androidx.appcompat.widget.Toolbar toolbar;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_them, container, false);
         anhXaView(view);
-        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                drawerLayout.openDrawer(GravityCompat.START);
+        ((AppCompatActivity) requireActivity()).setSupportActionBar(toolbar);
+        Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setHomeAsUpIndicator(R.drawable.ic_menu);
+        toolbar.setNavigationOnClickListener(view1 -> drawerLayout.openDrawer(GravityCompat.START));
+        navigationView.setNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.nav_sendEmail:
+                    Intent mailIntent = new Intent(Intent.ACTION_VIEW);
+                    Uri data = Uri.parse("mailto:?subject=" + "Phản Hồi Ứng Dụng" + "&body=" + "nội dung" + "&to=" + "nduc99911@gmail.com");
+                    mailIntent.setData(data);
+                    startActivity(Intent.createChooser(mailIntent, "Send mail..."));
+                    break;
+                case R.id.nav_thoat:
+                    Intent homeIntent = new Intent(Intent.ACTION_MAIN);
+                    homeIntent.addCategory(Intent.CATEGORY_HOME);
+                    homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(homeIntent);
+                    break;
             }
-        });
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.nav_sendEmail:
-                        Intent mailIntent = new Intent(Intent.ACTION_VIEW);
-                        Uri data = Uri.parse("mailto:?subject=" + "Phản Hồi Ứng Dụng"+ "&body=" + "nội dung" + "&to=" + "nduc99911@gmail.com");
-                        mailIntent.setData(data);
-                        startActivity(Intent.createChooser(mailIntent, "Send mail..."));
-                        break;
-                    case R.id.nav_thoat:
-                        Intent homeIntent = new Intent(Intent.ACTION_MAIN);
-                        homeIntent.addCategory( Intent.CATEGORY_HOME );
-                        homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(homeIntent);
-                        break;
-                }
-                return false;
-            }
+            return false;
         });
         //chuyển sang sản phẩm activity
-        imgMatHang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                chuyenAct(SanPhamActivity.class);
-            }
-        });
-        tvMatHang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                chuyenAct(SanPhamActivity.class);
-            }
-        });
+        imgMatHang.setOnClickListener(view12 -> chuyenAct(SanPhamActivity.class));
+        tvMatHang.setOnClickListener(view13 -> chuyenAct(SanPhamActivity.class));
 
         //chuyển sang loại sản phẩm activity
-        imgPhanLoai.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                chuyenAct(LoaiSanPhamActivity.class);
-            }
-        });
-        tvPhanLoai.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                chuyenAct(LoaiSanPhamActivity.class);
-            }
-        });
+        imgPhanLoai.setOnClickListener(view14 -> chuyenAct(LoaiSanPhamActivity.class));
+        tvPhanLoai.setOnClickListener(view15 -> chuyenAct(LoaiSanPhamActivity.class));
 
         //chuyển sang đơn vị tính activity
-        imgDonViTinh.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                chuyenAct(DonViTinhActivity.class);
-            }
-        });
-        tvDonViTinh.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                chuyenAct(DonViTinhActivity.class);
-            }
-        });
+        imgDonViTinh.setOnClickListener(view16 -> chuyenAct(DonViTinhActivity.class));
+        tvDonViTinh.setOnClickListener(view17 -> chuyenAct(DonViTinhActivity.class));
 
         //-> người dùng act
-        imgNguoiDung.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                chuyenAct(KhachHangActivity.class);
-            }
-        });
-        tvNguoiDung.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                chuyenAct(KhachHangActivity.class);
-            }
-        });
+        imgNguoiDung.setOnClickListener(view18 -> chuyenAct(KhachHangActivity.class));
+        tvNguoiDung.setOnClickListener(view19 -> chuyenAct(KhachHangActivity.class));
         return view;
     }
 

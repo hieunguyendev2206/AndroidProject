@@ -19,7 +19,7 @@ public class manhinhchao extends AppCompatActivity {
         new Handler().postDelayed(() -> {
             startActivity(new Intent(getApplicationContext(), MatHangActivity.class));
             finish();
-        },2500);
+        }, 2500);
 
     }
 }

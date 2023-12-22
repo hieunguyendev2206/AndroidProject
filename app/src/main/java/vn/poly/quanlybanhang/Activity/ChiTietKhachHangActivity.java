@@ -62,18 +62,17 @@ public class ChiTietKhachHangActivity extends AppCompatActivity {
             b.setNegativeButton("Hủy", (dialog, id) -> dialog.dismiss());
             AlertDialog al = b.create();
             al.show();
-
         });
         btnUpdate.setOnClickListener(view -> {
             final Dialog dialog = new Dialog(context, android.R.style.Theme_NoTitleBar_Fullscreen);
             dialog.setContentView(R.layout.dialog_sua_khach_hang);
             dialog.show();
             anhXaViewDia(dialog);
-            edTen.setText("" + khachHang.getTen());
-            edSoDienThoai.setText("" + khachHang.getSoDienThoai());
-            edDiaChi.setText("" + khachHang.getDiaChi());
-            edEmail.setText("" + khachHang.getEmail());
-            edTienNo.setText("" + Math.round(khachHang.getTienNo()));
+            edTen.setText(khachHang.getTen());
+            edSoDienThoai.setText(khachHang.getSoDienThoai());
+            edDiaChi.setText(khachHang.getDiaChi());
+            edEmail.setText(khachHang.getEmail());
+            edTienNo.setText(String.valueOf(Math.round(khachHang.getTienNo())));
             imgLuu.setOnClickListener(view1 -> {
                 String ten = edTen.getText().toString();
                 String soDienThoai = edSoDienThoai.getText().toString();
@@ -87,7 +86,7 @@ public class ChiTietKhachHangActivity extends AppCompatActivity {
 
                 KhachHang khachHang = new KhachHang(ten, email, soDienThoai, diaChi, Integer.parseInt(tienNo), khachHangDAO.getKhachHangBySDT(phone).getTienDaMua());
                 try {
-                    khachHangDAO.updateKhacHang(khachHang, phone);
+                    khachHangDAO.updateKhachHang(khachHang, phone);
                     Toast.makeText(context, "Lưu thành công", Toast.LENGTH_SHORT).show();
                     dialog.dismiss();
                     startActivity(new Intent(ChiTietKhachHangActivity.this, KhachHangActivity.class));

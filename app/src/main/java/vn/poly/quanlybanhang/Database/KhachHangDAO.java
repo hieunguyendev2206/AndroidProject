@@ -5,10 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import vn.poly.quanlybanhang.Model.KhachHang;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import vn.poly.quanlybanhang.Model.KhachHang;
 
 public
 class KhachHangDAO {
@@ -40,7 +40,7 @@ class KhachHangDAO {
         return sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
     }
 
-    public long updateKhacHang(KhachHang khachHang, String sdt) {
+    public void updateKhachHang(KhachHang khachHang, String sdt) {
         ContentValues contentValues = new ContentValues();
         contentValues.put("hoTen", khachHang.getTen());
         contentValues.put("soDienThoai", khachHang.getSoDienThoai());
@@ -48,7 +48,7 @@ class KhachHangDAO {
         contentValues.put("diaChi", khachHang.getDiaChi());
         contentValues.put("tienNo", khachHang.getTienNo());
         contentValues.put("tienDaMua", khachHang.getTienDaMua());
-        return sqLiteDatabase.update(TABLE_NAME, contentValues, "soDienThoai = ?", new String[]{sdt});
+        sqLiteDatabase.update(TABLE_NAME, contentValues, "soDienThoai = ?", new String[]{sdt});
     }
 
     public long updateTienNo(KhachHang khachHang, String sdt) {
@@ -58,12 +58,13 @@ class KhachHangDAO {
     }
 
 
-    public long updateTien(double tienNo,double tienMua,String sdt){
+    public void updateTien(double tienNo, double tienMua, String sdt) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put("tienNo",tienNo);
-        contentValues.put("tienDaMua",tienMua);
-        return sqLiteDatabase.update(TABLE_NAME, contentValues, "soDienThoai = ?", new String[]{sdt});
+        contentValues.put("tienNo", tienNo);
+        contentValues.put("tienDaMua", tienMua);
+        sqLiteDatabase.update(TABLE_NAME, contentValues, "soDienThoai = ?", new String[]{sdt});
     }
+
     public long deleteKhachHang(String sdt) {
         return sqLiteDatabase.delete(TABLE_NAME, "soDienThoai = ?", new String[]{sdt});
     }
@@ -92,7 +93,7 @@ class KhachHangDAO {
     }
 
     public KhachHang getKhachHangBySDT(String sdt) {
-        String query = "Select * from " + TABLE_NAME + " where soDienThoai = '"+sdt+"'";
+        String query = "Select * from " + TABLE_NAME + " where soDienThoai = '" + sdt + "'";
         Cursor cursor = sqLiteDatabase.rawQuery(query, null);
         KhachHang khachHang = null;
         if (cursor.getCount() > 0) {
@@ -108,9 +109,10 @@ class KhachHangDAO {
         cursor.close();
         return khachHang;
     }
+
     public List<KhachHang> timKiemKhachHang(String text) {
         List<KhachHang> list = new ArrayList<>();
-        String query = "Select DISTINCT * from " + TABLE_NAME + " where soDienThoai like '%"+text+"%' or hoTen like '%"+text+"%'"  ;
+        String query = "Select DISTINCT * from " + TABLE_NAME + " where soDienThoai like '%" + text + "%' or hoTen like '%" + text + "%'";
         Cursor cursor = sqLiteDatabase.rawQuery(query, null);
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();

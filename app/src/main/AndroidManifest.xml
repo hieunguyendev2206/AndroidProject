@@ -17,22 +17,22 @@
         <activity
             android:name="vn.poly.quanlybanhang.Activity.HoaDonChiTietActivity"
             android:noHistory="true"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="fullSensor" />
         <activity android:name="vn.poly.quanlybanhang.Activity.KhachHangActivity"
             android:noHistory="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="fullSensor"/>
         <activity android:name="vn.poly.quanlybanhang.Activity.ChiTietKhachHangActivity"
             android:noHistory="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="fullSensor"/>
         <activity android:name="vn.poly.quanlybanhang.Activity.ThemKhachHangActivity"
             android:noHistory="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="fullSensor"/>
         <activity android:name="vn.poly.quanlybanhang.Activity.ChiTietSanPhamActivity"
             android:noHistory="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="fullSensor"/>
         <activity android:name="vn.poly.quanlybanhang.manhinhchao"
             android:noHistory="true"
-            android:screenOrientation="portrait"
+            android:screenOrientation="fullSensor"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,47 +44,47 @@
             android:name="vn.poly.quanlybanhang.Activity.DonHangActivity"
             android:windowSoftInputMode="stateHidden"
             android:noHistory="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="fullSensor"/>
         <activity
             android:name="vn.poly.quanlybanhang.Activity.ThemSanPhamActivity"
             android:windowSoftInputMode="stateHidden"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="fullSensor"/>
         <activity
             android:name="vn.poly.quanlybanhang.Activity.SanPhamActivity"
             android:noHistory="true"
             android:windowSoftInputMode="stateHidden"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="fullSensor"/>
         <activity
             android:name="vn.poly.quanlybanhang.Activity.SuaSanPhamActivity"
             android:windowSoftInputMode="stateHidden"
             android:noHistory="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="fullSensor"/>
         <activity
             android:name="vn.poly.quanlybanhang.Activity.LoaiSanPhamActivity"
             android:windowSoftInputMode="stateHidden"
             android:noHistory="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="fullSensor"/>
         <activity
             android:name="vn.poly.quanlybanhang.Activity.ThemLoaiSanPham"
             android:windowSoftInputMode="stateHidden"
             android:noHistory="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="fullSensor"/>
         <activity
             android:name="vn.poly.quanlybanhang.Activity.ThemDonViTinh"
             android:windowSoftInputMode="stateHidden"
             android:noHistory="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="fullSensor"/>
 
         <activity
             android:name="vn.poly.quanlybanhang.Activity.DonViTinhActivity"
             android:windowSoftInputMode="stateHidden"
             android:noHistory="true"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="fullSensor"/>
 
         <activity
             android:name="vn.poly.quanlybanhang.Activity.MatHangActivity"
             android:windowSoftInputMode="stateHidden"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="fullSensor"/>
 
     </application>
 

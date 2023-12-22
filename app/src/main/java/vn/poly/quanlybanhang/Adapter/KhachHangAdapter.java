@@ -1,5 +1,6 @@
 package vn.poly.quanlybanhang.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,10 +9,11 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import vn.poly.quanlybanhang.Model.KhachHang;
 import com.example.duan1android.R;
 
 import java.util.List;
+
+import vn.poly.quanlybanhang.Model.KhachHang;
 
 public
 class KhachHangAdapter extends BaseAdapter {
@@ -38,27 +40,29 @@ class KhachHangAdapter extends BaseAdapter {
         return 0;
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder viewHolder;
-        if(view == null){
+        if (view == null) {
             viewHolder = new ViewHolder();
             view = LayoutInflater.from(context).inflate(R.layout.item_thiet_lap_khach_hang, viewGroup, false);
             viewHolder.imgHinhAnh = view.findViewById(R.id.imgNguoiDung);
             viewHolder.tvTen = view.findViewById(R.id.tvTenKhachHang);
             viewHolder.tvSDT = view.findViewById(R.id.tvSDT);
             view.setTag(viewHolder);
-        }else {
+        } else {
             viewHolder = (ViewHolder) view.getTag();
         }
         KhachHang khachHang = list.get(i);
-        viewHolder.tvTen.setText("Họ tên : "+khachHang.getTen());
-        viewHolder.tvSDT.setText("Số điện thoại : "+khachHang.getSoDienThoai());
+        viewHolder.tvTen.setText("Họ tên : " + khachHang.getTen());
+        viewHolder.tvSDT.setText("Số điện thoại : " + khachHang.getSoDienThoai());
         viewHolder.imgHinhAnh.setImageResource(R.drawable.profile);
         return view;
     }
-    private static class ViewHolder{
+
+    private static class ViewHolder {
         ImageView imgHinhAnh;
-        TextView tvTen,tvSDT;
+        TextView tvTen, tvSDT;
     }
 }

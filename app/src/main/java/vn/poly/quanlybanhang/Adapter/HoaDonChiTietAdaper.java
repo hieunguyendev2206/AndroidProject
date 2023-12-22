@@ -6,8 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
 import com.example.duan1android.R;
+
 import java.util.List;
+
 import vn.poly.quanlybanhang.Model.HoaDonChiTiet;
 
 public
@@ -38,24 +41,25 @@ class HoaDonChiTietAdaper extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder viewHolder;
-        if(view == null){
+        if (view == null) {
             view = LayoutInflater.from(context).inflate(R.layout.item_don_hang, viewGroup, false);
             viewHolder = new ViewHolder();
             viewHolder.tvSanPham = view.findViewById(R.id.tvSanPhamGH);
             viewHolder.tvGia = view.findViewById(R.id.tvGiaGH);
             viewHolder.tvSoluong = view.findViewById(R.id.tvSoLuongGH);
             view.setTag(viewHolder);
-        }else{
+        } else {
             viewHolder = (ViewHolder) view.getTag();
         }
         HoaDonChiTiet hoaDonChiTiet = list.get(i);
-        viewHolder.tvSanPham.setText(""+hoaDonChiTiet.getGioHang().getTen());
-        viewHolder.tvGia.setText(""+Math.round(hoaDonChiTiet.getGioHang().getGia()*hoaDonChiTiet.getGioHang().getSoLuong()));
-        viewHolder.tvSoluong.setText(""+hoaDonChiTiet.getGioHang().getSoLuong());
+        viewHolder.tvSanPham.setText(hoaDonChiTiet.getGioHang().getTen());
+        viewHolder.tvGia.setText(String.valueOf(Math.round(hoaDonChiTiet.getGioHang().getGia() * hoaDonChiTiet.getGioHang().getSoLuong())));
+        viewHolder.tvSoluong.setText(String.valueOf(hoaDonChiTiet.getGioHang().getSoLuong()));
         return view;
     }
-   private static class ViewHolder{
-       TextView tvSanPham,tvSoluong,tvGia;
-   }
+
+    private static class ViewHolder {
+        TextView tvSanPham, tvSoluong, tvGia;
+    }
 }
 

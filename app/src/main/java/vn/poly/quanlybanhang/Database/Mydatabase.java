@@ -23,12 +23,12 @@ public class Mydatabase extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        sqLiteDatabase.execSQL("Drop table "+SanPhamDAO.TABLE_NAME);
-        sqLiteDatabase.execSQL("Drop table "+HoaDonDAO.TABLE_NAME);
-        sqLiteDatabase.execSQL("Drop table "+HoaDonChiTietDAO.TABLE_NAME);
-        sqLiteDatabase.execSQL("Drop table "+KhachHangDAO.TABLE_NAME);
-        sqLiteDatabase.execSQL("Drop table "+LoaiSanPhamDAO.TABLE_NAME);
-        sqLiteDatabase.execSQL("Drop table "+DonViTinhDAO.TABLE_NAME);
+        sqLiteDatabase.execSQL("Drop table " + SanPhamDAO.TABLE_NAME);
+        sqLiteDatabase.execSQL("Drop table " + HoaDonDAO.TABLE_NAME);
+        sqLiteDatabase.execSQL("Drop table " + HoaDonChiTietDAO.TABLE_NAME);
+        sqLiteDatabase.execSQL("Drop table " + KhachHangDAO.TABLE_NAME);
+        sqLiteDatabase.execSQL("Drop table " + LoaiSanPhamDAO.TABLE_NAME);
+        sqLiteDatabase.execSQL("Drop table " + DonViTinhDAO.TABLE_NAME);
 
         onCreate(sqLiteDatabase);
     }

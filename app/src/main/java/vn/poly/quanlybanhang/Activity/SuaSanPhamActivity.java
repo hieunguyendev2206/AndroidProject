@@ -94,8 +94,7 @@ public class SuaSanPhamActivity extends AppCompatActivity {
             }
         });
         //sự kiện load ảnh
-        imgThemAnh.setOnClickListener(view -> ActivityCompat.requestPermissions(SuaSanPhamActivity.this, new String[]{
-                Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_CODE_FOLDER));
+        imgThemAnh.setOnClickListener(view -> ActivityCompat.requestPermissions(SuaSanPhamActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_CODE_FOLDER));
         imgSuaSanPham.setOnClickListener(view -> updateSanPham());
     }
 
@@ -140,8 +139,7 @@ public class SuaSanPhamActivity extends AppCompatActivity {
         soLuong = edSoLuong.getText().toString();
         giaBan = edGiaBan.getText().toString();
         giaNhap = edGiaNhap.getText().toString();
-        if (ma.equalsIgnoreCase("") || ten.equalsIgnoreCase("") || soLuong.equalsIgnoreCase("")
-                || giaBan.equalsIgnoreCase("") || giaNhap.equalsIgnoreCase("")) {
+        if (ma.equalsIgnoreCase("") || ten.equalsIgnoreCase("") || soLuong.equalsIgnoreCase("") || giaBan.equalsIgnoreCase("") || giaNhap.equalsIgnoreCase("")) {
             Toast.makeText(SuaSanPhamActivity.this, "Vui lòng điền đủ dữ liệu", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -218,10 +216,10 @@ public class SuaSanPhamActivity extends AppCompatActivity {
         try {
             SanPham sanPham = sanPhamDAO.getSanPhamTheoMa(ma);
             edTen.setText(sanPham.getTen());
-            edGiaBan.setText("" + Math.round(sanPham.getGiaBan()));
-            edGiaNhap.setText("" + Math.round(sanPham.getGiaNhap()));
+            edGiaBan.setText(String.valueOf(Math.round(sanPham.getGiaBan())));
+            edGiaNhap.setText(String.valueOf(Math.round(sanPham.getGiaNhap())));
             edMa.setText(sanPham.getMaSanPham());
-            edSoLuong.setText("" + sanPham.getSoLuong());
+            edSoLuong.setText(String.valueOf(sanPham.getSoLuong()));
         } catch (Exception e) {
             Toast.makeText(SuaSanPhamActivity.this, "Không lấy đc dữ liệu", Toast.LENGTH_SHORT).show();
         }

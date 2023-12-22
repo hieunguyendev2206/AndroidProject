@@ -1,17 +1,17 @@
 package vn.poly.quanlybanhang.Adapter;
 
-        import android.content.Context;
-        import android.view.LayoutInflater;
-        import android.view.View;
-        import android.view.ViewGroup;
-        import android.widget.BaseAdapter;
-        import android.widget.TextView;
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.TextView;
 
-        import com.example.duan1android.R;
+import com.example.duan1android.R;
 
-        import java.util.List;
+import java.util.List;
 
-        import vn.poly.quanlybanhang.Model.GioHang;
+import vn.poly.quanlybanhang.Model.GioHang;
 
 public
 class DonHangAdapter extends BaseAdapter {
@@ -41,26 +41,26 @@ class DonHangAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder viewHolder;
-        if(view == null){
+        if (view == null) {
             view = LayoutInflater.from(context).inflate(R.layout.item_don_hang, viewGroup, false);
             viewHolder = new ViewHolder();
             viewHolder.tvSanPham = view.findViewById(R.id.tvSanPhamGH);
             viewHolder.tvGia = view.findViewById(R.id.tvGiaGH);
             viewHolder.tvSoluong = view.findViewById(R.id.tvSoLuongGH);
             view.setTag(viewHolder);
-        }else{
+        } else {
             viewHolder = (ViewHolder) view.getTag();
         }
         GioHang gioHang = list.get(i);
-        viewHolder.tvSanPham.setText(""+gioHang.getTen());
-        viewHolder.tvGia.setText(""+Math.round(gioHang.getSoLuong()*gioHang.getGia()));
-        viewHolder.tvSoluong.setText(""+gioHang.getSoLuong());
+        viewHolder.tvSanPham.setText(gioHang.getTen());
+        viewHolder.tvGia.setText(String.valueOf(Math.round(gioHang.getSoLuong() * gioHang.getGia())));
+        viewHolder.tvSoluong.setText(String.valueOf(gioHang.getSoLuong()));
         return view;
     }
 
 
-    private static class ViewHolder{
-        TextView tvSanPham,tvSoluong,tvGia;
+    private static class ViewHolder {
+        TextView tvSanPham, tvSoluong, tvGia;
     }
 
 }

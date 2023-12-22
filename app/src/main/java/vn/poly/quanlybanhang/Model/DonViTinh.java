@@ -1,7 +1,7 @@
 package vn.poly.quanlybanhang.Model;
 
 public class DonViTinh {
-    private String donViTinh;
+    private final String donViTinh;
 
     public DonViTinh(String donViTinh) {
         this.donViTinh = donViTinh;
@@ -11,7 +11,4 @@ public class DonViTinh {
         return donViTinh;
     }
 
-    public void setDonViTinh(String donViTinh) {
-        this.donViTinh = donViTinh;
-    }
 }

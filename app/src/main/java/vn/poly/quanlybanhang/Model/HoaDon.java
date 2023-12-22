@@ -2,12 +2,11 @@ package vn.poly.quanlybanhang.Model;
 
 import java.util.Date;
 
-public
-class HoaDon {
-    private String maHD;
-    private String tenKhachHang;
+public class HoaDon {
+    private final String maHD;
+    private final String tenKhachHang;
     private String trangThai;
-    private Date ngayBan;
+    private final Date ngayBan;
     private int khachTra;
     private int traLai;
     private int tongTien;
@@ -30,7 +29,6 @@ class HoaDon {
     }
 
 
-
     public String getTrangThai() {
         return trangThai;
     }
@@ -43,24 +41,12 @@ class HoaDon {
         return maHD;
     }
 
-    public void setMaHD(String maHD) {
-        this.maHD = maHD;
-    }
-
     public String getTenKhachHang() {
         return tenKhachHang;
     }
 
-    public void setTenKhachHang(String tenKhachHang) {
-        this.tenKhachHang = tenKhachHang;
-    }
-
     public Date getNgayBan() {
         return ngayBan;
-    }
-
-    public void setNgayBan(Date ngayBan) {
-        this.ngayBan = ngayBan;
     }
 
     public int getKhachTra() {

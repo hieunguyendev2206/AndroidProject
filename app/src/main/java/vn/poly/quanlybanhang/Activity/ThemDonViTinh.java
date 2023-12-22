@@ -41,8 +41,7 @@ public class ThemDonViTinh extends AppCompatActivity {
     public void ThemDonViTinhLuu(View view) {
         String donVi = edThemDonViTinh.getText().toString();
         if (donVi.equalsIgnoreCase("")) {
-            Snackbar snackbar = Snackbar
-                    .make(linearLayout, "Vui lòng điền đầy đủ thông tin", Snackbar.LENGTH_LONG);
+            Snackbar snackbar = Snackbar.make(linearLayout, "Vui lòng điền đầy đủ thông tin", Snackbar.LENGTH_LONG);
             snackbar.show();
             return;
         }

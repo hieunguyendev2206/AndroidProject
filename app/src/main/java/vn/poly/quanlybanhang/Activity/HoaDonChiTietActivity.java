@@ -26,8 +26,7 @@ import vn.poly.quanlybanhang.Model.HoaDonChiTiet;
 
 public class HoaDonChiTietActivity extends AppCompatActivity {
     @SuppressLint("SimpleDateFormat")
-    final
-    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
     Button btnSuaHoaDonButton;
     HoaDonChiTietDAO hoaDonChiTietDAO;
     HoaDonDAO hoaDonDAO;
@@ -72,13 +71,13 @@ public class HoaDonChiTietActivity extends AppCompatActivity {
 
     @SuppressLint("SetTextI18n")
     public void dienThongTinHoaDon(HoaDon hoaDon) {
-        tvDonHang.setText("" + hoaDon.getMaHD());
-        tvThoiGian.setText("" + simpleDateFormat.format(hoaDon.getNgayBan()));
-        tvKhachHang.setText("" + hoaDon.getTenKhachHang());
-        tvChietKhau.setText("" + hoaDon.getChietKhau());
-        tvTraLai.setText("" + hoaDon.getTraLai());
-        tvKhachTra.setText("" + hoaDon.getKhachTra());
-        tvTongTien.setText("" + hoaDon.getTongTien());
+        tvDonHang.setText(hoaDon.getMaHD());
+        tvThoiGian.setText(simpleDateFormat.format(hoaDon.getNgayBan()));
+        tvKhachHang.setText(hoaDon.getTenKhachHang());
+        tvChietKhau.setText(String.valueOf(hoaDon.getChietKhau()));
+        tvTraLai.setText(String.valueOf(hoaDon.getTraLai()));
+        tvKhachTra.setText(String.valueOf(hoaDon.getKhachTra()));
+        tvTongTien.setText(String.valueOf(hoaDon.getTongTien()));
     }
 
     public void doDuLieu(List<HoaDonChiTiet> hoaDonChiTiets) {

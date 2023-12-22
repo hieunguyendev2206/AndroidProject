@@ -8,19 +8,19 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import vn.poly.quanlybanhang.Model.HoaDon;
 import com.example.duan1android.R;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
 
-public
-class HoaDonAdapter extends BaseAdapter {
+import vn.poly.quanlybanhang.Model.HoaDon;
+
+public class HoaDonAdapter extends BaseAdapter {
     final Context context;
-    List<HoaDon> list;
     @SuppressLint("SimpleDateFormat")
-    final
-    SimpleDateFormat simpleDateFormat=new SimpleDateFormat("dd-MM-yyyy");
+    final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+    List<HoaDon> list;
+
     public HoaDonAdapter(Context context, List<HoaDon> list) {
         this.context = context;
         this.list = list;
@@ -41,30 +41,33 @@ class HoaDonAdapter extends BaseAdapter {
         return 0;
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder viewHolder;
-        if(view == null){
+        if (view == null) {
             view = LayoutInflater.from(context).inflate(R.layout.item_hoa_don, viewGroup, false);
             viewHolder = new ViewHolder();
             viewHolder.tvNgayMua = view.findViewById(R.id.tvNgayMua);
             viewHolder.tvTongTien = view.findViewById(R.id.tvTongTien);
             view.setTag(viewHolder);
-        }else {
+        } else {
             viewHolder = (ViewHolder) view.getTag();
         }
         HoaDon hoaDon = list.get(i);
-        viewHolder.tvNgayMua.setText("Ngày bán : "+simpleDateFormat.format(hoaDon.getNgayBan()));
-        viewHolder.tvTongTien.setText("Mã Hóa Đơn : "+hoaDon.getMaHD());
+        viewHolder.tvNgayMua.setText("Ngày bán : " + simpleDateFormat.format(hoaDon.getNgayBan()));
+        viewHolder.tvTongTien.setText("Mã Hóa Đơn : " + hoaDon.getMaHD());
         return view;
     }
-    private static class ViewHolder{
-        TextView tvNgayMua, tvTongTien,tvShowHDCT;
 
+    public void changeDataSet(List<HoaDon> arrHoaDon) {
+        this.list = arrHoaDon;
+        notifyDataSetChanged();
     }
 
-    public void changeDataSet(List<HoaDon> arrHoaDon){
-        this.list=arrHoaDon;
-        notifyDataSetChanged();
+    private static class ViewHolder {
+        TextView tvNgayMua;
+        TextView tvTongTien;
+
     }
 }

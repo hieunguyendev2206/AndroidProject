@@ -1,5 +1,6 @@
 package vn.poly.quanlybanhang.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -10,13 +11,13 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import vn.poly.quanlybanhang.Model.SanPham;
 import com.example.duan1android.R;
 
 import java.util.List;
 
-public
-class SanPhamAdapter extends BaseAdapter {
+import vn.poly.quanlybanhang.Model.SanPham;
+
+public class SanPhamAdapter extends BaseAdapter {
     final Context context;
     List<SanPham> list;
 
@@ -40,10 +41,11 @@ class SanPhamAdapter extends BaseAdapter {
         return 0;
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder viewHolder;
-        if(view == null){
+        if (view == null) {
             view = LayoutInflater.from(context).inflate(R.layout.item_san_pham, viewGroup, false);
             viewHolder = new ViewHolder();
             viewHolder.tvMa = view.findViewById(R.id.tvMa_ItemSp);
@@ -52,27 +54,27 @@ class SanPhamAdapter extends BaseAdapter {
             viewHolder.tvSoluong = view.findViewById(R.id.tvCon_ItemSp);
             viewHolder.imgSanPham = view.findViewById(R.id.imageView_ItemSp);
             view.setTag(viewHolder);
-        }else{
+        } else {
             viewHolder = (ViewHolder) view.getTag();
         }
         SanPham sanPham = list.get(i);
-        viewHolder.tvMa.setText("Mã : "+sanPham.getMaSanPham());
-        viewHolder.tvSanPham.setText("Tên sản phẩm : "+sanPham.getTen());
-        viewHolder.tvGia.setText("Giá bán : "+Math.round(sanPham.getGiaBan())+ " VNĐ");
-        viewHolder.tvSoluong.setText("Còn : "+sanPham.getSoLuong());
+        viewHolder.tvMa.setText("Mã : " + sanPham.getMaSanPham());
+        viewHolder.tvSanPham.setText("Tên sản phẩm : " + sanPham.getTen());
+        viewHolder.tvGia.setText("Giá bán : " + Math.round(sanPham.getGiaBan()) + " VNĐ");
+        viewHolder.tvSoluong.setText("Còn : " + sanPham.getSoLuong());
         byte[] image = sanPham.getImage();
         try {
             Bitmap bitmap = BitmapFactory.decodeByteArray(image, 0, image.length);
             viewHolder.imgSanPham.setImageBitmap(bitmap);
-        }catch (Exception e){
+        } catch (Exception e) {
             viewHolder.imgSanPham.setImageResource(R.drawable.ic_sanpham1);
         }
         return view;
     }
 
 
-    private static class ViewHolder{
-        TextView tvMa, tvSanPham,tvGia, tvSoluong;
+    private static class ViewHolder {
+        TextView tvMa, tvSanPham, tvGia, tvSoluong;
         ImageView imgSanPham;
     }
 }

@@ -1,36 +1,29 @@
 package vn.poly.quanlybanhang.Fragment;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
-import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
+
 import com.example.duan1android.R;
-import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.Description;
-import com.github.mikephil.charting.components.Legend;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.google.android.material.navigation.NavigationView;
-import java.util.ArrayList;
+
+import java.util.Objects;
+
 import vn.poly.quanlybanhang.Database.HoaDonDAO;
 
 
@@ -46,6 +39,7 @@ public class FragmentBaoCao extends Fragment {
     double thang1, thang2, thang3, thang4, thang5, thang6, thang7, thang8, thang9, thang10, thang11, thang12;
     String time;
     double doanhThu;
+
     public FragmentBaoCao() {
         // Required empty public constructor
     }
@@ -57,15 +51,10 @@ public class FragmentBaoCao extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_bao_cao, container, false);
         anhXaView(view);
-        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                drawerLayout.openDrawer(GravityCompat.START);
-            }
-        });
+        ((AppCompatActivity) requireActivity()).setSupportActionBar(toolbar);
+        Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setHomeAsUpIndicator(R.drawable.ic_menu);
+        toolbar.setNavigationOnClickListener(view1 -> drawerLayout.openDrawer(GravityCompat.START));
 
         return view;
     }
@@ -89,8 +78,6 @@ public class FragmentBaoCao extends Fragment {
         getBaoCao();
         boLoc();
         navDrawer();
-        //
-
     }
 
     @Override
@@ -99,48 +86,42 @@ public class FragmentBaoCao extends Fragment {
         super.onResume();
     }
 
-    public void boLoc(){
-        imgBoLoc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final Dialog dialog = new Dialog(getActivity(), android.R.style.Theme_Black_NoTitleBar_Fullscreen);
-                dialog.setContentView(R.layout.loc_bao_cao_dialog);
-                dialog.show();
-                anhXaViewDia(dialog);
-                tvLuuBoLoc.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        tvLoaiLoc.setText(luuChonTime());
-                        getBaoCao();
-                        dialog.dismiss();
-                    }
-                });
+    public void boLoc() {
+        imgBoLoc.setOnClickListener(view -> {
+            final Dialog dialog = new Dialog(requireActivity(), android.R.style.Theme_Black_NoTitleBar_Fullscreen);
+            dialog.setContentView(R.layout.loc_bao_cao_dialog);
+            dialog.show();
+            anhXaViewDia(dialog);
+            tvLuuBoLoc.setOnClickListener(view1 -> {
+                tvLoaiLoc.setText(luuChonTime());
+                getBaoCao();
+                dialog.dismiss();
+            });
 
-            }
         });
     }
-    public void navDrawer(){
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.nav_sendEmail:
-                        Intent mailIntent = new Intent(Intent.ACTION_VIEW);
-                        Uri data = Uri.parse("mailto:?subject=" + "Phản Hồi Ứng Dụng"+ "&body=" + "nội dung" + "&to=" + "nduc99911@gmail.com");
-                        mailIntent.setData(data);
-                        startActivity(Intent.createChooser(mailIntent, "Send mail..."));
-                        break;
-                    case R.id.nav_thoat:
-                        Intent homeIntent = new Intent(Intent.ACTION_MAIN);
-                        homeIntent.addCategory( Intent.CATEGORY_HOME );
-                        homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(homeIntent);
-                        break;
-                }
-                return false;
+
+    @SuppressLint("NonConstantResourceId")
+    public void navDrawer() {
+        navigationView.setNavigationItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.nav_sendEmail:
+                    Intent mailIntent = new Intent(Intent.ACTION_VIEW);
+                    Uri data = Uri.parse("mailto:?subject=" + "Phản Hồi Ứng Dụng" + "&body=" + "nội dung" + "&to=" + "nduc99911@gmail.com");
+                    mailIntent.setData(data);
+                    startActivity(Intent.createChooser(mailIntent, "Send mail..."));
+                    break;
+                case R.id.nav_thoat:
+                    Intent homeIntent = new Intent(Intent.ACTION_MAIN);
+                    homeIntent.addCategory(Intent.CATEGORY_HOME);
+                    homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(homeIntent);
+                    break;
             }
+            return false;
         });
     }
+
     public void anhXaView(View view) {
         tvSoHoaDon = view.findViewById(R.id.tvSoHoaDon);
         tvGiaTriHoaDon = view.findViewById(R.id.tvGiaTriHoaDon);
@@ -158,15 +139,16 @@ public class FragmentBaoCao extends Fragment {
     }
 
 
+    @SuppressLint("SetTextI18n")
     private void getBaoCao() {
         time = tvLoaiLoc.getText().toString();
         doanhThu = hoaDonDAO.getDoanhThu(time);
-        tvDoanhThu.setText("" + Math.round(doanhThu) + "\nDoanh thu");
-        tvGiaTriHoaDon.setText("" + Math.round(doanhThu) + " VNĐ");
-        tvTienBan.setText("" + Math.round(doanhThu) + " VNĐ");
-        tvSoHoaDon.setText("" + hoaDonDAO.getSoHoaDon(time));
-        tvTienVon.setText("" + hoaDonDAO.getSoTienVon(time) + " VNĐ");
-        tvLoiNhuan.setText("" + (Math.round(doanhThu) - hoaDonDAO.getSoTienVon(time)) + "\nLợi nhuận");
+        tvDoanhThu.setText(Math.round(doanhThu) + "\nDoanh thu");
+        tvGiaTriHoaDon.setText(Math.round(doanhThu) + " VNĐ");
+        tvTienBan.setText(Math.round(doanhThu) + " VNĐ");
+        tvSoHoaDon.setText(String.valueOf(hoaDonDAO.getSoHoaDon(time)));
+        tvTienVon.setText(hoaDonDAO.getSoTienVon(time) + " VNĐ");
+        tvLoiNhuan.setText((Math.round(doanhThu) - hoaDonDAO.getSoTienVon(time)) + "\nLợi nhuận");
     }
 
     public String luuChonTime() {
@@ -202,23 +184,5 @@ public class FragmentBaoCao extends Fragment {
 
     }
 
-
-    private ArrayList<Entry> dataValue() {
-
-        ArrayList<Entry> data = new ArrayList<>();
-        data.add(new Entry(1, (float) thang1));
-        data.add(new Entry(2, (float) thang2));
-        data.add(new Entry(3, (float) thang3));
-        data.add(new Entry(4, (float) thang4));
-        data.add(new Entry(5, (float) thang5));
-        data.add(new Entry(6, (float) thang6));
-        data.add(new Entry(7, (float) thang7));
-        data.add(new Entry(8, (float) thang8));
-        data.add(new Entry(9, (float) thang9));
-        data.add(new Entry(10, (float) thang10));
-        data.add(new Entry(11, (float) thang11));
-        data.add(new Entry(12, (float) thang12));
-        return data;
-    }
 
 }

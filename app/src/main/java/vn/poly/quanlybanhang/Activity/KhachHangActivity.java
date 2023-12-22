@@ -44,7 +44,7 @@ public class KhachHangActivity extends AppCompatActivity {
         lvList.setOnItemClickListener((adapterView, view, i, l) -> {
             Intent intent = new Intent(KhachHangActivity.this, ChiTietKhachHangActivity.class);
             intent.putExtra("phoneNumber", list.get(i).getSoDienThoai());
-            Log.e("SĐT", "" + list.get(i).getSoDienThoai());
+            Log.e("SĐT", list.get(i).getSoDienThoai());
             startActivity(intent);
         });
         edTimKiem.addTextChangedListener(new TextWatcher() {

@@ -6,12 +6,12 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import vn.poly.quanlybanhang.Model.HoaDon;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+
+import vn.poly.quanlybanhang.Model.HoaDon;
 
 public class HoaDonDAO {
     public static final String TABLE_NAME = "HoaDon";
@@ -47,7 +47,7 @@ public class HoaDonDAO {
         return sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
     }
 
-    public long updateHoaDon(HoaDon hoaDon, String ma) {
+    public void updateHoaDon(HoaDon hoaDon, String ma) {
         ContentValues contentValues = new ContentValues();
         contentValues.put("maHoaDon", hoaDon.getMaHD());
         contentValues.put("ngayBan", simpleDateFormat.format(hoaDon.getNgayBan()));
@@ -57,8 +57,8 @@ public class HoaDonDAO {
         contentValues.put("traLai", hoaDon.getTraLai());
         contentValues.put("tongTien", hoaDon.getTongTien());
         contentValues.put("trangThai", hoaDon.getTrangThai());
-        return sqLiteDatabase.update(TABLE_NAME, contentValues, "maHoaDon = ?", new String[]{ma});
-}
+        sqLiteDatabase.update(TABLE_NAME, contentValues, "maHoaDon = ?", new String[]{ma});
+    }
 
     public long deleteHoaDon(String ma) {
         return sqLiteDatabase.delete(TABLE_NAME, "maHoaDon = ?", new String[]{ma});
@@ -146,7 +146,7 @@ public class HoaDonDAO {
         } else {
             query = "Select SUM(tongTien) from " + TABLE_NAME + " where  ngayban >= date('now','start of month','-1 month') AND ngayban < date('now','start of month') ";
         }
-        
+
         Cursor cursor = sqLiteDatabase.rawQuery(query, null);
         double tien = 0;
         if (cursor.getCount() > 0) {
@@ -375,7 +375,6 @@ public class HoaDonDAO {
         }
         return list;
     }
-
 
 
 }

@@ -49,9 +49,6 @@ public class ChiTietSanPhamActivity extends AppCompatActivity {
         } catch (Exception e) {
             imgSP.setImageResource(R.drawable.ic_sanpham1);
         }
-
-
-        // sự kiện update:
         btnChinhSua.setOnClickListener(view -> {
             ma = intent.getStringExtra("sanPham");
             Intent intent1 = new Intent(ChiTietSanPhamActivity.this, SuaSanPhamActivity.class);

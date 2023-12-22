@@ -4,10 +4,12 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import vn.poly.quanlybanhang.Model.GioHang;
-import vn.poly.quanlybanhang.Model.HoaDonChiTiet;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import vn.poly.quanlybanhang.Model.GioHang;
+import vn.poly.quanlybanhang.Model.HoaDonChiTiet;
 
 public
 class HoaDonChiTietDAO {
@@ -36,24 +38,10 @@ class HoaDonChiTietDAO {
         return sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
     }
 
-    public long updateHDCT(HoaDonChiTiet hoaDonChiTiet, String ma) {
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("maHoaDon", hoaDonChiTiet.getMaHoaDon());
-        contentValues.put("tenSanPham", hoaDonChiTiet.getGioHang().getTen());
-        contentValues.put("maSanPham", hoaDonChiTiet.getGioHang().getMa());
-        contentValues.put("soLuong", hoaDonChiTiet.getGioHang().getSoLuong());
-        contentValues.put("gia", hoaDonChiTiet.getGioHang().getGia());
-        return sqLiteDatabase.update(TABLE_NAME, contentValues, "maHDCT = ?", new String[]{ma});
-    }
-
-    public long deleteHDCT(String ma) {
-        return sqLiteDatabase.delete(TABLE_NAME, "maHDCT = ?", new String[]{ma});
-    }
-
     public List<HoaDonChiTiet> getAllHDCT(String maHD) {
         List<HoaDonChiTiet> list = new ArrayList<>();
         // String query = "Select maHDCT, HoaDon.maHoaDon,SanPham.maSanPham FROM HoaDonChiTiet INNER JOIN HoaDon on HoaDonChiTiet.maHoaDon=HoaDon.maHoaDon INNER JOIN SanPham on SanPham.maSanPham = HoaDonChiTiet.maSanPham where HoaDonChiTiet.maHoaDon='" + maHD + "'";
-        String query = " Select * from " + TABLE_NAME + " where maHoaDon = '" + maHD +"'";
+        String query = " Select * from " + TABLE_NAME + " where maHoaDon = '" + maHD + "'";
         Cursor cursor = sqLiteDatabase.rawQuery(query, null);
         if (cursor.getCount() > 0) {
             cursor.moveToFirst();
@@ -63,7 +51,7 @@ class HoaDonChiTietDAO {
                 String ten = cursor.getString(2);
                 int soLuong = cursor.getInt(4);
                 double gia = cursor.getDouble(5);
-                HoaDonChiTiet hoaDonChiTiet = new HoaDonChiTiet(maHd,new GioHang(ten,maSP,gia,soLuong));
+                HoaDonChiTiet hoaDonChiTiet = new HoaDonChiTiet(maHd, new GioHang(ten, maSP, gia, soLuong));
                 list.add(hoaDonChiTiet);
                 cursor.moveToNext();
             }

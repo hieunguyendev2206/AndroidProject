@@ -1,13 +1,16 @@
 package vn.poly.quanlybanhang.Model;
 
 public class SanPham {
-    private String maSanPham, maLoai, ten, donViTinh;
-    private double giaNhap, giaBan;
-    private byte[] image;
+    private final String maSanPham;
+    private final String maLoai;
+    private final String ten;
+    private final String donViTinh;
+    private final double giaNhap;
+    private final double giaBan;
+    private final byte[] image;
     private int soLuong;
 
-    public SanPham(String maSanPham, String maLoai, String ten, String donViTinh, int soLuong,
-                   double giaNhap, double giaBan, byte[] image) {
+    public SanPham(String maSanPham, String maLoai, String ten, String donViTinh, int soLuong, double giaNhap, double giaBan, byte[] image) {
         this.maSanPham = maSanPham;
         this.maLoai = maLoai;
         this.ten = ten;
