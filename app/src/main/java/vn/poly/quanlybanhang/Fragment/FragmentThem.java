@@ -55,7 +55,7 @@ public class FragmentThem extends Fragment {
             switch (item.getItemId()) {
                 case R.id.nav_sendEmail:
                     Intent mailIntent = new Intent(Intent.ACTION_VIEW);
-                    Uri data = Uri.parse("mailto:?subject=" + "Phản Hồi Ứng Dụng" + "&body=" + "nội dung" + "&to=" + "nduc99911@gmail.com");
+                    Uri data = Uri.parse("mailto:?subject=" + "Phản Hồi Ứng Dụng" + "&body=" + "nội dung" + "&to=" + "2100011408@nttu.edu.vn");
                     mailIntent.setData(data);
                     startActivity(Intent.createChooser(mailIntent, "Send mail..."));
                     break;
