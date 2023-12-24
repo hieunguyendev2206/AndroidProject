@@ -93,7 +93,6 @@ public class SanPhamActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //chuyển sang activity thêm sản phẩm
     public void SanPhamThem(View view) {
         Intent intent = new Intent(this, ThemSanPhamActivity.class);
         startActivity(intent);

@@ -72,7 +72,6 @@ public class SanPhamAdapter extends BaseAdapter {
         return view;
     }
 
-
     private static class ViewHolder {
         TextView tvMa, tvSanPham, tvGia, tvSoluong;
         ImageView imgSanPham;
