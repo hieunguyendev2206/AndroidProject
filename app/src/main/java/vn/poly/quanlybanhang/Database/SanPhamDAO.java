@@ -29,6 +29,7 @@ public class SanPhamDAO {
         sqLiteDatabase = mydatabase.getWritableDatabase();
     }
 
+    // Thêm Sản Phẩm
     public long addSanPham(SanPham sanPham) {
         ContentValues contentValues = new ContentValues();
         contentValues.put("maSanPham", sanPham.getMaSanPham());
@@ -42,6 +43,7 @@ public class SanPhamDAO {
         return sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
     }
 
+    // Cập nhật sản phẩm
     public void updateSanPham(SanPham sanPham, String ma) {
         ContentValues contentValues = new ContentValues();
         contentValues.put("maSanPham", sanPham.getMaSanPham());
@@ -55,16 +57,19 @@ public class SanPhamDAO {
         sqLiteDatabase.update(TABLE_NAME, contentValues, "maSanPham = ?", new String[]{ma});
     }
 
+    // Cập nhật số lượng sản phẩm
     public void updateSLSanPham(int soLuong, String ma) {
         ContentValues contentValues = new ContentValues();
         contentValues.put("soLuong", soLuong);
         sqLiteDatabase.update(TABLE_NAME, contentValues, "maSanPham = ?", new String[]{ma});
     }
 
+    // Xóa sản phẩm
     public long deleteSanPham(String ma) {
         return sqLiteDatabase.delete(TABLE_NAME, "maSanPham = ?", new String[]{ma});
     }
 
+    // Lấy tất cả sản phẩm để hiển thị từ Database
     public List<SanPham> getAllSanPham() {
         List<SanPham> list = new ArrayList<>();
         String query = "Select * from " + TABLE_NAME;

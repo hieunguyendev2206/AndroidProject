@@ -42,6 +42,7 @@ public class SanPhamActivity extends AppCompatActivity {
         sanPhamDAO = new SanPhamDAO(this);
         list = new ArrayList<>();
         doDuLieu();
+        // Đổ dữ liệu vào Sniper
         lvList.setOnItemClickListener((adapterView, view, i, l) -> {
             Intent intent = new Intent(SanPhamActivity.this, ChiTietSanPhamActivity.class);
             SanPham sanPham = list.get(i);
