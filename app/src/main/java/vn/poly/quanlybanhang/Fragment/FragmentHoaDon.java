@@ -105,7 +105,6 @@ public class FragmentHoaDon extends Fragment {
 
     }
 
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -165,7 +164,6 @@ public class FragmentHoaDon extends Fragment {
         });
 
     }
-
 
     public void anhXaView(View view) {
         tvLoaiLoc = view.findViewById(R.id.tvLoaiLoc);

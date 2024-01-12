@@ -38,43 +38,50 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="@string/tat_ca" />
+                android:text="@string/tat_ca"
+                android:textColor="#000000" />
 
             <RadioButton
                 android:id="@+id/radHomNay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hôm nay" />
+                android:text="Hôm nay"
+                android:textColor="#000000" />
 
             <RadioButton
                 android:id="@+id/radHomQua"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Hôm qua" />
+                android:text="Hôm qua"
+                android:textColor="#000000" />
 
             <RadioButton
                 android:id="@+id/radTuanNay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tuần này" />
+                android:text="Tuần này"
+                android:textColor="#000000" />
 
             <RadioButton
                 android:id="@+id/radTuanTruoc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tuần trước" />
+                android:text="Tuần trước"
+                android:textColor="#000000" />
 
             <RadioButton
                 android:id="@+id/radThangNay"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tháng này" />
+                android:text="Tháng này"
+                android:textColor="#000000" />
 
             <RadioButton
                 android:id="@+id/radThangTruoc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tháng Trước" />
+                android:text="Tháng Trước"
+                android:textColor="#000000" />
         </RadioGroup>
 
         <TextView
@@ -98,19 +105,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:checked="true"
-                android:text="Tất cả" />
+                android:text="Tất cả"
+                android:textColor="#000000" />
 
             <RadioButton
                 android:id="@+id/radChuaThanhToan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Chưa Thanh Toán" />
+                android:text="Chưa Thanh Toán"
+                android:textColor="#000000" />
 
             <RadioButton
                 android:id="@+id/radDaThanhToan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Đã Thanh Toán" />
+                android:text="Đã Thanh Toán"
+                android:textColor="#000000" />
 
 
         </RadioGroup>

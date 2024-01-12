@@ -227,5 +227,4 @@ public class ThemSanPhamActivity extends AppCompatActivity {
         builder.setTitle("Cần quyền truy cập lưu trữ").setMessage("Ứng dụng cần quyền truy cập lưu trữ để chọn hình ảnh.").setPositiveButton("OK", (dialog, which) -> checkAndRequestStoragePermission()).setNegativeButton("Hủy", (dialog, which) -> Toast.makeText(ThemSanPhamActivity.this, "Bạn đã từ chối quyền truy cập lưu trữ", Toast.LENGTH_SHORT).show()).show();
     }
 
-
 }
